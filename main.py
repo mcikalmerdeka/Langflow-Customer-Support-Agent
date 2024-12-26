@@ -33,7 +33,18 @@ def run_flow(message: str) -> dict:
 
 def main():
     st.title("Customer Support Chat Interface")
+
+    # Display the instructions in an expander
+    with st.expander("Application Instructions"):
+        st.markdown(
+            """
+            1. Enter a message in the text area.
+            2. Click on the "Run Flow" button.
+            3. The model response message will be displayed below.
+            """
+        )
     
+    # Get the message from the user
     message = st.text_area("Message", placeholder="Ask something here...")
     
     if st.button("Run Flow"):
